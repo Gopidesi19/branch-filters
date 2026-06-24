@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checout
+        uses: actions/checkout@v3
+      - name: execution
+        run: echo "execution completed"
+      - name: branch
+        run: ${{ github.ref }}
