@@ -16,4 +16,4 @@ jobs:
       - name: execution
         run: echo "execution completed"
       - name: branch
-        run: ${{ github.ref == '/ref/heads/main' }}
+        run: ${{ 'github.ref' }}
