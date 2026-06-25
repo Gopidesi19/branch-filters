@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   build:
@@ -18,10 +20,3 @@ jobs:
 
       - name: Print Full Ref
         run: 'echo "Ref: ${{ github.ref }}"'
-
-      - name: Print Branch Name
-        run: 'echo "Branch: ${{ github.ref_name }}"'
-
-      - name: Print PR Source Branch
-        if: github.event_name == 'pull_request'
-        run: 'echo "Source Branch: ${{ github.head_ref }}"'
